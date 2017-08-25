@@ -20,11 +20,11 @@ This image bundles all official adminer plugins. You can find the list of plugin
 
 To load plugins you can pass a list of filenames in `ADMINER_PLUGINS`:
 
-	$ docker run --link some_database:db -p 8080:8080 -e ADMINER_PLUGINS='tables-filter tinymce' adminer
+	$ docker run --link some_database:db -p 8080:8080 -e ADMINER_PLUGINS='tables-filter tinymce' geographica/adminer
 
 If a plugin *requires* parameters to work correctly you will need to add a custom file to the container:
 
-	$ docker run --link some_database:db -p 8080:8080 -e ADMINER_PLUGINS='login-servers' adminer
+	$ docker run --link some_database:db -p 8080:8080 -e ADMINER_PLUGINS='login-servers' geographica/adminer
 	Unable to load plugin file "login-servers", because it has required parameters: servers
 	Create a file "/var/www/html/plugins-enabled/login-servers.php" with the following contents to load the plugin:
 
@@ -48,7 +48,7 @@ The image bundles all the designs that are available in the source package of ad
 
 To use a bundled design you can pass its name in `ADMINER_DESIGN`:
 
-	$ docker run --link some_database:db -p 8080:8080 -e ADMINER_DESIGN='nette' adminer
+	$ docker run --link some_database:db -p 8080:8080 -e ADMINER_DESIGN='nette' geographica/adminer
 
 To use a custom design you can add a file called `/var/www/html/adminer.css`.
 
