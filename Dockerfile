@@ -5,7 +5,7 @@ USER root
 RUN set -x \
 &&	apk add --no-cache --virtual .build-deps autoconf openssl-dev pcre-dev g++ make \
 &&  pecl install mongodb \
-&&  echo "extension=mongodb.so" > $PHP_INI_DIR/conf.d/mongodb.ini \
+&&  docker-php-ext-enable mongodb \
 &&	apk del .build-deps autoconf openssl-dev pcre-dev g++ make
 
 USER adminer
